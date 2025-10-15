@@ -139,6 +139,15 @@ pnpm --filter @anchor/api dev
 
 # Mobile only
 pnpm --filter @anchor/mobile dev
+
+# 1. Stop the current Expo server (Ctrl+C)
+
+# 2. Clear the cache
+rm -rf /Users/div910/Desktop/workspace/anchor-your-now/apps/mobile/.expo
+
+# 3. Restart with clean cache
+cd /Users/div910/Desktop/workspace/anchor-your-now/apps/mobile && npx expo start --clear
+
 ```
 
 ## Step 6: Verify Everything Works
