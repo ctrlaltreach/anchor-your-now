@@ -1,187 +1,230 @@
-# Anchor
+# Anchor - Cross-Platform Application
 
-A full-stack TypeScript monorepo powered by Turborepo, pnpm workspaces, Next.js, Expo, NestJS, and Supabase.
+A modern, cross-platform application built with Next.js and React Native, featuring shared UI components and seamless functionality across web and mobile devices.
 
-## 🏗️ Project Structure
+## 🚀 Features
+
+- **Cross-Platform**: Shared components that work on both web and mobile
+- **Modern UI**: Beautiful, responsive design with Tailwind CSS and custom components
+- **TypeScript**: Full type safety across the entire codebase
+- **Monorepo**: Organized with pnpm workspaces and Turborepo
+- **Reusable Components**: Comprehensive UI component library
+- **Responsive Design**: Optimized for all screen sizes
+
+## 📱 Platforms
+
+- **Web**: Next.js 14 with Tailwind CSS
+- **Mobile**: React Native with Expo
+- **API**: NestJS backend (optional)
+
+## 🏗️ Architecture
 
 ```
-anchor/
+anchor-your-now/
 ├── apps/
-│   ├── web/          # Next.js frontend (TypeScript + App Router)
-│   ├── mobile/       # Expo (React Native) mobile app
-│   └── api/          # NestJS backend API
+│   ├── web/          # Next.js web application
+│   ├── mobile/       # React Native mobile app
+│   └── api/          # NestJS API server
 ├── packages/
-│   ├── shared/       # Shared TypeScript types & API client
-│   └── ui/           # Shared React UI components
-├── package.json
-├── pnpm-workspace.yaml
-├── turbo.json
-└── tsconfig.base.json
+│   ├── ui/           # Shared UI components
+│   └── shared/       # Shared utilities and types
+└── ...
 ```
 
-## 🚀 Quick Start
+## 🎨 UI Components
+
+### Web Components
+- `Button` - Various styles and sizes
+- `Input` - Form input with validation
+- `Card` - Content containers
+- `Modal` - Overlay dialogs
+- `Badge` - Status indicators
+- `Alert` - Notification messages
+- `Select` - Dropdown selections
+- `Textarea` - Multi-line text input
+- `Checkbox` - Boolean input
+- `LoadingSpinner` - Loading indicators
+
+### Mobile Components
+- `MobileButton` - Touch-optimized buttons
+- `MobileInput` - Native text inputs
+- `MobileCard` - Mobile-friendly cards
+
+## 🛠️ Getting Started
 
 ### Prerequisites
 
-- **Node.js**: v18.x or higher
-- **pnpm**: v8.x or higher
-- **Supabase account** (for database)
+- Node.js v18+
+- pnpm v8+
+- Expo CLI (for mobile development)
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd anchor-your-now
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
-
-3. **Set up environment variables**
-
-   Create `.env` files in each app directory:
-
-   **apps/web/.env**
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-   ```
-
-   **apps/mobile/.env**
-   ```
-   EXPO_PUBLIC_SUPABASE_URL=your-supabase-url
-   EXPO_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-   ```
-
-   **apps/api/.env**
-   ```
-   SUPABASE_URL=your-supabase-url
-   SUPABASE_ANON_KEY=your-supabase-anon-key
-   SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
-   PORT=3001
-   ```
-
-4. **Run in development mode**
-   ```bash
-   pnpm dev
-   ```
-
-   This starts all apps concurrently:
-   - Web: http://localhost:3000
-   - API: http://localhost:3001
-   - Mobile: Expo dev server (scan QR code)
-
-## 📦 Workspaces
-
-### Apps
-
-#### `apps/web` - Next.js Frontend
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS (optional)
-- **Dev**: `pnpm --filter @anchor/web dev`
-- **Build**: `pnpm --filter @anchor/web build`
-
-#### `apps/mobile` - Expo Mobile App
-- **Framework**: Expo SDK 54 / React Native 0.76
-- **Router**: Expo Router v4
-- **Language**: TypeScript
-- **CLI**: Uses bundled Expo CLI (`npx expo`)
-- **Dev**: `pnpm --filter @anchor/mobile dev`
-- **iOS**: `pnpm --filter @anchor/mobile ios`
-- **Android**: `pnpm --filter @anchor/mobile android`
-
-#### `apps/api` - NestJS Backend
-- **Framework**: NestJS
-- **Language**: TypeScript
-- **Database**: Supabase (PostgreSQL)
-- **Dev**: `pnpm --filter @anchor/api dev`
-- **Build**: `pnpm --filter @anchor/api build`
-
-### Packages
-
-#### `packages/shared` - Shared Types & API Client
-- Shared TypeScript types and interfaces
-- API client for frontend-backend communication
-- **Build**: `pnpm --filter @anchor/shared build`
-
-#### `packages/ui` - Shared UI Components
-- Reusable React components
-- Used in both web and mobile apps
-- **Build**: `pnpm --filter @anchor/ui build`
-
-## 🛠️ Available Scripts
-
-### Root Commands
-
+1. Clone the repository:
 ```bash
-# Install all dependencies
+git clone <repository-url>
+cd anchor-your-now
+```
+
+2. Install dependencies:
+```bash
 pnpm install
-
-# Run all apps in development
-pnpm dev
-
-# Build all apps and packages
-pnpm build
-
-# Run all apps in production mode
-pnpm start
-
-# Lint all apps and packages
-pnpm lint
-
-# Run tests across all workspaces
-pnpm test
-
-# Format code with Prettier
-pnpm format
-
-# Clean all node_modules and build artifacts
-pnpm clean
 ```
 
-### Per-Workspace Commands
+3. Set up environment variables (see SETUP.md for details)
+
+4. Start development servers:
+```bash
+pnpm dev
+```
+
+This will start:
+- Web app: http://localhost:3000
+- Mobile app: Scan QR code with Expo Go
+- API server: http://localhost:3001
+
+## 📖 Usage
+
+### Web Application
+
+The web app features a modern dashboard with:
+- Responsive navigation
+- Feature showcase
+- Interactive components
+- Modal dialogs
+- Form handling
+
+### Mobile Application
+
+The mobile app provides:
+- Native mobile experience
+- Touch-optimized interactions
+- Responsive layouts
+- Platform-specific styling
+
+### Shared Components
+
+Use components from the `@anchor/ui` package:
+
+```tsx
+import { Button, Card, Input } from '@anchor/ui'
+
+// Web usage
+<Button variant="primary" onClick={handleClick}>
+  Click me
+</Button>
+
+// Mobile usage
+<MobileButton variant="primary" onPress={handlePress}>
+  Click me
+</MobileButton>
+```
+
+## 🎯 Key Features Demonstrated
+
+1. **Cross-Platform Consistency**: Same functionality across web and mobile
+2. **Component Reusability**: Shared UI components with platform-specific implementations
+3. **Modern Development**: TypeScript, modern tooling, and best practices
+4. **Responsive Design**: Optimized for all screen sizes
+5. **Interactive Elements**: Modals, forms, and dynamic content
+
+## 🏃‍♂️ Development
+
+### Available Scripts
 
 ```bash
-# Run commands in specific workspace
-pnpm --filter @anchor/web dev
-pnpm --filter @anchor/api build
-pnpm --filter @anchor/mobile test
+# Development
+pnpm dev                 # Start all apps
+pnpm --filter @anchor/web dev    # Web only
+pnpm --filter @anchor/mobile dev # Mobile only
 
-# Or navigate to workspace directory
-cd apps/web
-pnpm dev
+# Building
+pnpm build              # Build all apps
+pnpm --filter @anchor/ui build   # Build UI package
+
+# Testing
+pnpm test               # Run all tests
+pnpm lint               # Lint all code
+pnpm format             # Format code
 ```
 
-## 🔧 Tech Stack
+### Adding New Components
 
-- **Monorepo**: Turborepo + pnpm workspaces
-- **Frontend**: Next.js 14 (TypeScript)
-- **Mobile**: Expo (React Native + TypeScript)
-- **Backend**: NestJS (TypeScript)
-- **Database**: Supabase (PostgreSQL)
-- **Type Safety**: TypeScript across all apps
-- **Package Manager**: pnpm
-- **Build Tool**: Turbo
+1. Create component in `packages/ui/src/`
+2. Add mobile version in `packages/ui/src/mobile/`
+3. Export from `packages/ui/src/index.tsx`
+4. Build the package: `pnpm --filter @anchor/ui build`
+5. Use in apps: `import { Component } from '@anchor/ui'`
+
+## 📱 Mobile Development
+
+The mobile app uses Expo with the following features:
+- Expo Router for navigation
+- React Native components
+- Native styling with StyleSheet
+- Platform-specific optimizations
+
+### Running on Device
+
+1. Install Expo Go app on your device
+2. Run `pnpm --filter @anchor/mobile dev`
+3. Scan the QR code with Expo Go
+4. App will load on your device
+
+## 🌐 Web Development
+
+The web app uses Next.js 14 with:
+- App Router
+- Tailwind CSS for styling
+- Server-side rendering
+- Static generation
+
+### Deployment
+
+```bash
+# Build for production
+pnpm --filter @anchor/web build
+
+# Start production server
+pnpm --filter @anchor/web start
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+See `SETUP.md` for detailed environment configuration.
+
+### Styling
+
+- **Web**: Tailwind CSS with custom components
+- **Mobile**: React Native StyleSheet with consistent design tokens
 
 ## 📚 Documentation
 
-- [Next.js Docs](https://nextjs.org/docs)
-- [Expo Docs](https://docs.expo.dev/)
-- [NestJS Docs](https://docs.nestjs.com/)
-- [Supabase Docs](https://supabase.com/docs)
-- [Turborepo Docs](https://turbo.build/repo/docs)
+- [Setup Guide](SETUP.md) - Detailed setup instructions
+- [Quick Reference](QUICK_REFERENCE.md) - Common commands and patterns
+- [Contributing](CONTRIBUTING.md) - Development guidelines
 
 ## 🤝 Contributing
 
-1. Create a feature branch
-2. Make your changes
-3. Run `pnpm lint` and `pnpm test`
-4. Submit a pull request
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## 📝 License
+## 📄 License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Mobile app powered by [Expo](https://expo.dev/)
+- UI components inspired by modern design systems
+- Monorepo setup with [Turborepo](https://turbo.build/)
+
+---
+
+**Anchor** - Your foundation for cross-platform applications.
